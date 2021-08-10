@@ -61,12 +61,12 @@ public class CandySpawner : MonoBehaviour
 
     public void StartSpawningCandies()
     {
-        StartCoroutine("SpawnCandies");
+        StartCoroutine(nameof(SpawnCandies));
     }
 
     public void StopSpawningCandies()
     {
-        StopCoroutine("SpawnCandies");
+        StopCoroutine(nameof(SpawnCandies));
     }
     
     
