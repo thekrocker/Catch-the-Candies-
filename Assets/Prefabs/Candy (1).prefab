@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6320041184618506673}
   m_Layer: 0
   m_Name: Candy (1)
-  m_TagString: Untagged
+  m_TagString: Candy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,3 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aeac36577b7f0409f60a4470dad979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 8607466407229625159, guid: 07cca6375bde8cf43adff4fc78f6f833,
+    type: 3}

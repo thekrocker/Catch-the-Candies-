@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class CandyScript : MonoBehaviour
 {
+
+    public GameObject explosion;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Game_Manager.Instance.IncrementScore(); // increase score everytime we collide with player
+            Game_Manager.Instance.IncrementScore();            // increase score everytime we collide with player
+
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         

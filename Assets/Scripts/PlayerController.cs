@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,5 +34,14 @@ public class PlayerController : MonoBehaviour
         float xPos = Mathf.Clamp(transform.position.x, -maxPos, maxPos); // Restricting the X position because we only move on X and storing it
 
         transform.position = new Vector3(xPos, transform.position.y, transform.position.z); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Candy"))
+        {
+            GetComponent<AudioSource>().Play();
+            
+        }
     }
 }
