@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Game_Manager : MonoBehaviour
@@ -71,5 +72,16 @@ public class Game_Manager : MonoBehaviour
         gameOverPanel.SetActive(true);
         
         // print("Gameover");
+    }
+
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
