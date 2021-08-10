@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float xInput = Input.GetAxis("Horizontal"); // returns value how much we press left or right arrow key
-        Debug.Log(xInput);  // shows the float value how it changes
+        
         transform.position += Vector3.right * xInput * speed * Time.deltaTime; // move positive x axis, careful, its "+=". We are adding on it.
 
         float xPos = Mathf.Clamp(transform.position.x, -maxPos, maxPos); // Restricting the X position because we only move on X and storing it

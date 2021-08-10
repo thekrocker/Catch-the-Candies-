@@ -9,7 +9,7 @@ public class CandyScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //Increment Score
+            Game_Manager.Instance.IncrementScore(); // increase score everytime we collide with player
             Destroy(gameObject);
         }
         
