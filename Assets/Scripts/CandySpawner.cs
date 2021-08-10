@@ -56,16 +56,17 @@ public class CandySpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
         
+        
     }
 
     public void StartSpawningCandies()
     {
-        StartCoroutine(SpawnCandies());
+        StartCoroutine("SpawnCandies");
     }
 
     public void StopSpawningCandies()
     {
-        StopCoroutine(SpawnCandies());
+        StopCoroutine("SpawnCandies");
     }
     
     

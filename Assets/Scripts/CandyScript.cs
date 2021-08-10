@@ -15,8 +15,9 @@ public class CandyScript : MonoBehaviour
         
         else if (other.gameObject.CompareTag("Deadzone"))
         {
-            // Decrement Lives
-            Destroy(gameObject);
+            Game_Manager.Instance.DecreaseLife();   // Decrement Lives
+
+            Destroy(gameObject); // destroy candy
         }
     }
     

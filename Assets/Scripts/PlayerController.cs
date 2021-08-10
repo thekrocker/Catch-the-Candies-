@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool _canMove = true;
+    public bool canMove = true;
 
 
     [SerializeField] private float maxPos; // We need to check the borders of player when goes left. so that we can take that position as border
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_canMove)
+        if (canMove)
         {
             Move();
         }

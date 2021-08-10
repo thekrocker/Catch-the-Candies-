@@ -7,11 +7,16 @@ public class Game_Manager : MonoBehaviour
 {
 
     public static Game_Manager Instance;
-    public int score = 0;
 
+    public GameObject livesHolder;
+    public Text scoreText;
+    public GameObject gameOverPanel;
+
+    
+    private int _score = 0;
+    private int _lives = 3;
     private bool _gameOver = false;
 
-    public Text scoreText;
     
     void Start()
     {
@@ -26,9 +31,45 @@ public class Game_Manager : MonoBehaviour
 
     public void IncrementScore()
     {
-        score++;
-        scoreText.text = score.ToString();
-        print(score); // lets see if score's working.
+
+        if (!_gameOver)
+        {
+            _score++;
+            scoreText.text = _score.ToString();
+            
+            // print(_score);
+        }
+
         
+    }
+
+    public void DecreaseLife()
+    {
+        if (_lives > 0)
+        {
+            _lives--;
+            
+            print(_lives);
+
+            livesHolder.transform.GetChild(_lives).gameObject.SetActive(false);
+
+        }
+
+        if (_lives <= 0)
+        {
+            _gameOver = true;
+
+            GameOver();
+        }
+        
+    }
+
+    public void GameOver()
+    {
+        CandySpawner.instance.StopSpawningCandies();
+        GameObject.Find("Player").GetComponent<PlayerController>().canMove = false;
+        gameOverPanel.SetActive(true);
+        
+        // print("Gameover");
     }
 }
