@@ -12,5 +12,13 @@ public class CandyScript : MonoBehaviour
             //Increment Score
             Destroy(gameObject);
         }
+        
+        else if (other.gameObject.CompareTag("Deadzone"))
+        {
+            // Decrement Lives
+            Destroy(gameObject);
+        }
     }
+    
+    
 }
